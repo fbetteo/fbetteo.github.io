@@ -137,6 +137,8 @@ h4 {
 
 #bottom-top-wrapper {
   width: 100%;
+  overflow: auto;
+  position: relative;
   /* margin-bottom: 40px; */
   /* margin: 0 auto; */
   /* position: absolute; */
@@ -144,14 +146,15 @@ h4 {
 
 #bottom-group {
   float: left;
-  transform: translateX(150px);
+  transform: translateX(25vh);
+
 
   /*width: 50%;*/
 }
 
 #top-group {
   float: left;
-  transform: translateX(150px);
+  transform: translateX(25vh);
   /*width: 50%;*/
 }
 

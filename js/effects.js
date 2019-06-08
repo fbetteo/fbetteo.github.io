@@ -17,7 +17,7 @@ var data1 = []
 
 function loadData1()
 {
-    d3.csv("./data/effects.csv", function(data){
+    d3.csv("http://localhost:8000/data/effects.csv", function(data){
         data1.push(conversor(data));
     }).then( function() {
         DrawChart1();

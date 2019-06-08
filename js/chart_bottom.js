@@ -19,7 +19,7 @@ var Databottom = []
 
 function loadDatabottom()
 {
-    d3.csv("./data/residuals_bottom.csv", function(data){
+    d3.csv("http://localhost:8000/data/residuals_bottom.csv", function(data){
         Databottom.push(conversor2(data));
     }).then( function() {
         DrawChartbottom();
