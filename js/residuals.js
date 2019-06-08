@@ -19,7 +19,7 @@ var data2 = []
 
 function loadData2()
 {
-    d3.csv("http://localhost:8000/data/residuals.csv", function(data){
+    d3.csv("https://github.com/fbetteo/fbetteo.github.io/tree/master/js/residuals.csv", function(data){
         data2.push(conversor2(data));
     }).then( function() {
         DrawChart2();

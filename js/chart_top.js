@@ -19,7 +19,7 @@ var DataTop = []
 
 function loadDataTop()
 {
-    d3.csv("http://localhost:8000/data/residuals_top.csv", function(data){
+    d3.csv("https://github.com/fbetteo/fbetteo.github.io/tree/master/js/residuals_top.csv", function(data){
         DataTop.push(conversor2(data));
     }).then( function() {
         DrawChartTop();
