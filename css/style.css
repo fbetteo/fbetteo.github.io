@@ -1,0 +1,230 @@
+#wrapper, #wrapper-residual {
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+body {
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(0,122,51);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  border-bottom: 2px solid rgb(0,0,0);
+  z-index: 5; /* Relative. Sets the "up to front" order. Highest can't be overlapped. Put 5 arbitrarily */
+}
+
+/* .navbar img {
+  float: left;
+  padding: 2px;
+  height: 1.5%;
+  width: 1.5%;
+} */
+
+.navbar text {
+  display: block;
+  padding: 8px 20px;
+  color: rgb(255,255,255);
+  text-shadow: -1px 1px 0 rgb(139,111,78),
+                1px 1px 0  rgb(139,111,78),
+                1px -1px 0 rgb(139,111,78);
+  font-size: 1.5em;
+  font-family: Rockwell;
+  font-weight: bold;
+  /* text-align: center; */
+  /* float: left; */
+}
+
+#intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+h1 {
+  color: rgb(40,40,40);
+  font-size: 3.25em;
+  font-weight: bold;
+  margin-bottom: 0;
+  font-family: Helvetica;
+  transform: scaleX(1.10);
+}
+
+h2 {
+  color: rgb(0,122,51);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+  font-family: Helvetica;
+}
+
+.timestamp-container {
+  /* margin-bottom: 5px; */
+  margin-top: 15px;
+  font-family: Arial;
+  color: rgb(139,111,78);
+}
+
+p {
+  text-align: justify;
+  font-size: 100%;
+  font-family: Georgia;
+  line-height: 1.5;
+  color: rgb(50,50,50);
+}
+
+a {
+  color: rgb(0,122,51);
+  text-decoration: none;
+}
+
+li {
+  text-align: justify;
+  font-family: Georgia;
+  line-height: 1.5;
+  color: rgb(50,50,50);
+}
+
+
+h3 {
+  margin-top: 30px;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+
+h4 {
+  font-size: 1.05em;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+
+#menu {
+  float: left;
+  width:45%;
+}
+
+#x-axis-menu {
+  list-style: none;
+  font-size: 85%;
+  vertical-align: middle;
+  display: table;
+  transform: translateX(-30px);
+}
+
+#x-axis-menu li {
+  cursor: pointer;
+  padding-bottom: 5px;
+  display: table-row;
+  vertical-align: middle;
+  font-family: sans-serif;
+}
+
+#x-axis-menu li.selected {
+  font-weight: bold;
+  color: rgb(0,122,51);
+}
+
+#chart1 {
+  float: left;
+  width:55%;
+  transform: translateX(-130px);
+}
+
+#bottom-top-wrapper {
+  width: 100%;
+  /* margin-bottom: 40px; */
+  /* margin: 0 auto; */
+  /* position: absolute; */
+}
+
+#bottom-group {
+  float: left;
+  transform: translateX(150px);
+
+  /*width: 50%;*/
+}
+
+#top-group {
+  float: left;
+  transform: translateX(150px);
+  /*width: 50%;*/
+}
+
+
+#bottom-top-wrapper h4 {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
+
+#bottom-top-wrapper #yAxis text {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.bartop {
+	fill: rgb(100,195,165);
+}
+
+.barbottom {
+	fill: rgb(250,140,100);
+}
+
+
+rect:hover {
+  fill: rgb(150,150,150) ;
+}
+
+#chart-bottom #xLabel {
+  font-size: 0.9em;
+}
+
+#chart-top #xLabel {
+  font-size: 0.9em;
+}
+
+.h4-res {
+  float: left;
+}
+
+.tooltip-bottom, .tooltip-top {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  font-size: 12px;
+  color: white;
+  background: rgb(0,0,0);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#chart2 #xLabel {
+  font-size: 0.9em;
+}
+
+#chart2 #yLabel {
+  font-size: 0.9em;
+}
+
+.chart2names {
+  font-size: 0.7em;
+}
+
+.tooltip {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  font-size: 12px;
+  color: white;
+  background: rgb(0,0,0);
+  border-radius: 8px;
+  pointer-events: none;
+}

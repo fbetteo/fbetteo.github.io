@@ -1,0 +1,137 @@
+<!-- In windows with python 3: run from cmd at /site :
+python -m http.server 8000
+and enter http://localhost:8000/ in web browser  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <!-- <link rel="stylesheet" href="svg.css"> -->
+    <title> NBA salaries </title>
+  </head>
+  <body>
+    <div class = "navbar">
+      <!-- <img src = "png/nba_logo.png" alt="NBA Logo" height="211" width="92"></img> -->
+      <text> bball stats </text>
+    </div>
+    <div id="wrapper">
+      <div id="intro">
+        <div id="title">
+          <h1>NBA Salaries</h1>
+        </div>
+        <div id="subtitle">
+          <h2>Rating Players and Understanding Compensations in 2008-2018</h2>
+        </div>
+        <div class="timestamp-container">
+            <text>UPDATED JUN 7, 2019&nbsp;&nbsp;&nbsp;|
+              &nbsp;&nbsp;&nbsp;Franco Betteo & Francisco Valentini</text>
+        </div>
+      </div>
+      <div>
+        <p>Are NBA players paid according to their observable contribution to winning games?
+          Who are the most underpaid players? Who are the most overpaid? Which variables are
+          useful to explain differences in salaries?</p>
+        <p>To answer these questions we need:</p>
+        <ol>
+          <li>
+            <p><b>Data.</b>
+              We retreived salaries data from
+              <a href="https://data.world/makeovermonday/2018w29-historical-nba-team-spending-against-the-cap">
+              data.world</a>.
+              Personal stats were obtained from
+              <a href="https://www.kaggle.com/drgilermo/nba-players-stats">
+              Kaggle</a>.
+              We scraped relevant events &mdash;injuries, fines, sanctions and personal issues&mdash; from
+              <a href="http://www.prosportstransactions.com/basketball">
+              Pro Sports Transactions</a>.
+              We only kept records between seasons between 2008 and 2018 for players
+              with an annual salary over 1 million dollars and more than 400 minutes
+              played each season.</p>
+          </li>
+          <li>
+            <p><b>A statistical model.</b>
+              To understand how personal stats and events determine salaries we fitted a
+              <a href="https://en.wikipedia.org/wiki/Generalized_additive_model">
+              Generalised Additive Model</a> (GAM).
+              As opposed to standard linear regression, GAMs allow us to estimate non-linear
+              effects between the target and each feature, whilst preserving additivity and
+              thus interpretability.
+              In our model salaries we use annual salaries as the target variable &mdash;
+              to make them comparable over the years we adjust them with the
+              <a href="https://fred.stlouisfed.org/categories/9">
+              Federal Reserve CPI</a>
+              so that they are held at constant 2018 dollars.
+              Salaries are explained by a set of 20 predictor variables, made up of
+              by-season game stats and historical events.
+          </p>
+        </li>
+        </ol>
+        <p>All code is available at
+          <a href="https://github.com/ftvalentini/nba-salaries">
+            our GitHub repository</a>.</p>
+      </div>
+      <div>
+        <h3>The most important variables behind salaries</h3>
+          <p>This kind of modelling enables us to discover why some players make more money
+            than others &mdash;or in other words, how players' observable features determine their
+            salaries. Below we can see the shape of the effects of the statistically most
+            important features, represented as a green line. Behind the line we plot the
+            confidence band &mdash;the wider the band, the less confidence we can have in
+            that the fitted effect is correct.</p>
+          <p>For example, in the plot for Age we find that, holding all other features fixed,
+            salary tends to increase at ages around 28-30, while it is lower for
+            the very young and the very old &mdash;which is quite reasonable.</p>
+      </div>
+      <div id="menu">
+        <ul id="x-axis-menu"></ul>
+      </div>
+      <div id="chart1">
+      </div>
+      <div>
+        <h3>Overpayment and underpayment</h3>
+      </div>
+      <div>
+        <p> Given the fitted impact of the predictor variables on salaries
+           we can estimate the expected salary for each player each season.
+           This allows us to give an estimate of residuals &mdash;that is, the
+           difference between the expected salary and the actual salary.
+           By inspecting residuals we can identify which players get payments way
+           different from what the model suggests.
+           Some of them have been overpaid, getting much more money than the expected
+           according to what they did on the court and their personal features.
+           On the other hand, some players contributed a lot more to their teams
+           than what they got paid for.
+        </p>
+      </div>
+    </div>
+      <div id="bottom-top-wrapper">
+        <g id="bottom-group">
+          <h4>Top 10 Underpaid Players</h4>
+          <div id="chart-bottom"></div>
+        </g>
+        <g id="top-group">
+          <h4>Top 10 Overpaid Players</h4>
+          <div id="chart-top"></div>
+        </g>
+      </div>
+      <div id = "wrapper-residual">
+      <div>
+         <h4>Search by team and season!</h4>
+      </div>
+        <select id="selectTeam"></select>
+        <select id="selectSeason"></select>
+      <div id="chart2">
+      </div>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        crossorigin="anonymous"></script>
+        <script src="https://d3js.org/d3.v5.min.js"> </script>
+        <script src="js/effects.js"> </script>
+        <script src="js/residuals.js"> </script>
+        <script src="js/chart_top.js"> </script>
+        <script src="js/chart_bottom.js"> </script>
+      </div>
+  </body>
+</html>
