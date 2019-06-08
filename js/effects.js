@@ -17,7 +17,7 @@ var data1 = []
 
 function loadData1()
 {
-    d3.csv("https://github.com/fbetteo/fbetteo.github.io/tree/master/js/effects.csv", function(data){
+    d3.csv("./js/effects.csv", function(data){
         data1.push(conversor(data));
     }).then( function() {
         DrawChart1();
