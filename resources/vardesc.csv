@@ -1,0 +1,10 @@
+﻿variable,description
+age,Age
+inj_out_cum,Out-of-season injuries
+x2p_perg,2-pointers per game
+pf_perg,Personal fouls per game
+x3p_perg,3-pointers per game
+ast_perg,Assists per game
+blk_perg,Blocks per game
+stl_perg,Steals per game
+drb_perg,Defensive rebounds per game
